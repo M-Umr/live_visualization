@@ -10,11 +10,34 @@
   <body>
     <div class="w3-container w3-teal">
       <h5>Footer</h5>
-      <form class=visualize_form action="visualization_app/urls/action_page.php">
+      <form class=visualize_form action="{% url 'home' %}" method="post">
+        {% csrf_token %}
         <label for="number_of_rows">Enter the number of rows till 5.2 million:</label><br>
-        <input type="number" id="number_of_rows" name="number_of_rows">
-        <input type="submit" value="Submit">
+        <input type="number" id="number_of_rows" placeholder="Enter a number" 
+        name="number_of_rows" min="100" max="5300000">
+        <input type="submit" value="Submit" >
       </form>
     </div>
+    <div>
+      <img src="/live_visualization/visualization_app/templates/image/image.svg" alt="log_data_visualization">
+    </div>
   </body>
+  <script>
+    
+    // function setGetParameter(){
+    //     var n_rows_ = $("#number_of_rows").val();
+    //     $.ajax({
+    //       type: "POST",
+    //       url: {% url 'home' %},
+    //       data: n_rows_,
+    //       success: function(result){
+    //         alert("Success");
+    //       }
+    //     });
+    // }
+    // function send_number(n_rows){
+    //   console.log(n_rows, '         munber_of rows')
+    //   window.open("/visualization_app/?number_of_rows="+n_rows, "_self")
+    // }
+  </script>
 </html>
