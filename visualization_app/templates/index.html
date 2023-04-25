@@ -18,9 +18,12 @@
         <input type="submit" value="Submit" >
       </form>
     </div>
-    <div>
-      <img src="/live_visualization/visualization_app/templates/image/image.svg" alt="log_data_visualization">
-    </div>
+    {% if image_exists %}
+      {% load static %}
+      <img src="{% static 'image/image.svg' %}" alt="Image">
+	  {% else %}
+		  <p>Image not found</p>
+	  {% endif %}
   </body>
   <script>
     
