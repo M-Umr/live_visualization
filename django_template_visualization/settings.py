@@ -18,7 +18,6 @@ import dj_database_url
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
@@ -122,7 +121,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
-
+MEDIA_ROOT = os.path.join(BASE_DIR, 'visualization_app/static') #new
+print(MEDIA_ROOT)
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
@@ -134,7 +134,8 @@ TEMPLATE_DIRS = [
 ]
 
 STATIC_ROOT = STATIC_ROOT = BASE_DIR / "staticfiles" #new
-STATICFILES_DIRS = [BASE_DIR / "static"] #new
+STATICFILES_DIRS = [BASE_DIR / "visualization_app/static"] #new
+print(STATICFILES_DIRS)
 #STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage" #new
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'  # new
 django_heroku.settings(locals())

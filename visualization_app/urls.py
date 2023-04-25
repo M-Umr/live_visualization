@@ -3,5 +3,5 @@ from visualization_app import views
 
 urlpatterns = [
     path("", views.home, name="home"),
-    # path("page/", views.home, name="visualization_page"),
+    # path("", views.main_home, name="visualize_image"),
 ]
